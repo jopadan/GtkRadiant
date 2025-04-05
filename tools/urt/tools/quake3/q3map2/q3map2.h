@@ -1588,7 +1588,7 @@ tree_t                      *FaceBSP( face_t *list );
 
 /* model.c */
 void                        PicoPrintFunc( int level, const char *str );
-void                        PicoLoadFileFunc( char *name, byte **buffer, int *bufSize );
+void                        PicoLoadFileFunc( const char *name, unsigned char **buffer, int *bufSize );
 picoModel_t                 *FindModel( char *name, int frame );
 picoModel_t                 *LoadModel( char *name, int frame );
 void                        InsertModel( char *name, int frame, m4x4_t transform, remap_t *remap, shaderInfo_t *celShader, int eNum, int castShadows, int recvShadows, int spawnFlags, float lightmapScale );
@@ -1688,7 +1688,7 @@ int                         LightContributionToSample( trace_t *trace );
 void LightingAtSample( trace_t * trace, byte styles[ MAX_LIGHTMAPS ], vec3_t colors[ MAX_LIGHTMAPS ] );
 int                         LightContributionToPoint( trace_t *trace );
 int                         LightMain( int argc, char **argv );
-
+void                        ClearLightMap( rawLightmap_t *lm );
 
 /* light_trace.c */
 void                        SetupTraceNodes( void );
